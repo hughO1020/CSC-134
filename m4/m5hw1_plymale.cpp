@@ -1,5 +1,5 @@
 // CSC 134
-// M5HW1 - Gold Assignment
+// M5HW1
 // Hugh Plymale
 // 11/16/2026
 
@@ -17,126 +17,114 @@ void question5();
 
 int main()
 {
-    int choice;
+    int choice = 0;
 
-    do
+    while (choice != 6)
     {
         cout << endl;
-        cout << "CSC 134 - M5HW1 Menu" << endl;
+        cout << "CSC 134 M5HW1 Menu" << endl;
         cout << "1. Average Rainfall" << endl;
         cout << "2. Block Volume" << endl;
         cout << "3. Roman Numerals" << endl;
         cout << "4. Geometry Calculator" << endl;
         cout << "5. Distance Traveled" << endl;
         cout << "6. Exit" << endl;
-        cout << "Enter your choice (1-6): ";
+        cout << "Enter your choice: ";
         cin >> choice;
 
-        switch (choice)
+        if (choice == 1)
         {
-            case 1:
-                question1();
-                break;
-
-            case 2:
-                question2();
-                break;
-
-            case 3:
-                question3();
-                break;
-
-            case 4:
-                question4();
-                break;
-
-            case 5:
-                question5();
-                break;
-
-            case 6:
-                cout << "Exiting program. Goodbye!" << endl;
-                break;
-
-            default:
-                cout << "Invalid choice. Please enter a number from 1 through 6." << endl;
+            question1();
         }
-
-    } while (choice != 6);
+        else if (choice == 2)
+        {
+            question2();
+        }
+        else if (choice == 3)
+        {
+            question3();
+        }
+        else if (choice == 4)
+        {
+            question4();
+        }
+        else if (choice == 5)
+        {
+            question5();
+        }
+        else if (choice == 6)
+        {
+            cout << "Goodbye!" << endl;
+        }
+        else
+        {
+            cout << "Invalid choice. Enter a number from 1 through 6." << endl;
+        }
+    }
 
     return 0;
 }
 
-// QUESTION 1 - Average Rainfall
+// Question 1 - Average Rainfall
 void question1()
 {
     string month1, month2, month3;
     double rain1, rain2, rain3;
     double average;
 
-    cout << endl;
-    cout << "Average Rainfall Calculator" << endl;
-
     cout << "Enter month: ";
     cin >> month1;
-
     cout << "Enter rainfall for " << month1 << ": ";
     cin >> rain1;
 
     cout << "Enter month: ";
     cin >> month2;
-
     cout << "Enter rainfall for " << month2 << ": ";
     cin >> rain2;
 
     cout << "Enter month: ";
     cin >> month3;
-
     cout << "Enter rainfall for " << month3 << ": ";
     cin >> rain3;
 
     average = (rain1 + rain2 + rain3) / 3.0;
 
     cout << fixed << setprecision(2);
-
     cout << "The average rainfall for " << month1 << ", "
          << month2 << ", and " << month3
          << " is " << average << " inches." << endl;
 }
 
-// QUESTION 2 - Block Volume
+// Question 2 - Block Volume
 void question2()
 {
     double width, length, height;
     double volume;
 
-    cout << endl;
-    cout << "Block Volume Calculator" << endl;
-
-    cout << "Enter the width: ";
+    cout << "Enter width: ";
     cin >> width;
 
     while (width <= 0)
     {
-        cout << "Width must be greater than zero. Enter again: ";
+        cout << "Enter a width greater than zero: ";
         cin >> width;
     }
 
-    cout << "Enter the length: ";
+    cout << "Enter length: ";
     cin >> length;
 
     while (length <= 0)
     {
-        cout << "Length must be greater than zero. Enter again: ";
+        cout << "Enter a length greater than zero: ";
         cin >> length;
     }
 
-    cout << "Enter the height: ";
+    cout << "Enter height: ";
     cin >> height;
 
     while (height <= 0)
     {
-        cout << "Height must be greater than zero. Enter again: ";
+        cout << "Enter a height greater than zero: ";
         cin >> height;
     }
 
@@ -145,20 +133,17 @@ void question2()
     cout << "The volume of the block is " << volume << endl;
 }
 
-// QUESTION 3 - Roman Numerals
+// Question 3 - Roman Numerals
 void question3()
 {
     int number;
-
-    cout << endl;
-    cout << "Roman Numeral Converter" << endl;
 
     cout << "Enter a number (1 - 10): ";
     cin >> number;
 
     while (number < 1 || number > 10)
     {
-        cout << "Please enter a number between 1 and 10: ";
+        cout << "Enter a number between 1 and 10: ";
         cin >> number;
     }
 
@@ -166,51 +151,22 @@ void question3()
 
     switch (number)
     {
-        case 1:
-            cout << "I";
-            break;
-
-        case 2:
-            cout << "II";
-            break;
-
-        case 3:
-            cout << "III";
-            break;
-
-        case 4:
-            cout << "IV";
-            break;
-
-        case 5:
-            cout << "V";
-            break;
-
-        case 6:
-            cout << "VI";
-            break;
-
-        case 7:
-            cout << "VII";
-            break;
-
-        case 8:
-            cout << "VIII";
-            break;
-
-        case 9:
-            cout << "IX";
-            break;
-
-        case 10:
-            cout << "X";
-            break;
+        case 1: cout << "I"; break;
+        case 2: cout << "II"; break;
+        case 3: cout << "III"; break;
+        case 4: cout << "IV"; break;
+        case 5: cout << "V"; break;
+        case 6: cout << "VI"; break;
+        case 7: cout << "VII"; break;
+        case 8: cout << "VIII"; break;
+        case 9: cout << "IX"; break;
+        case 10: cout << "X"; break;
     }
 
     cout << endl;
 }
 
-// QUESTION 4 - Geometry Calculator
+// Question 4 - Geometry Calculator
 void question4()
 {
     int choice;
@@ -224,7 +180,6 @@ void question4()
     cout << "2. Calculate the Area of a Rectangle" << endl;
     cout << "3. Calculate the Area of a Triangle" << endl;
     cout << "4. Quit" << endl;
-
     cout << "Enter your choice (1-4): ";
     cin >> choice;
 
@@ -241,12 +196,11 @@ void question4()
 
         while (radius < 0)
         {
-            cout << "The radius cannot be less than zero. Enter again: ";
+            cout << "The radius cannot be less than zero: ";
             cin >> radius;
         }
 
         area = PI * radius * radius;
-
         cout << "The area is " << area << endl;
     }
     else if (choice == 2)
@@ -256,7 +210,7 @@ void question4()
 
         while (length < 0)
         {
-            cout << "Length cannot be negative. Enter again: ";
+            cout << "Enter a positive length: ";
             cin >> length;
         }
 
@@ -265,12 +219,11 @@ void question4()
 
         while (width < 0)
         {
-            cout << "Width cannot be negative. Enter again: ";
+            cout << "Enter a positive width: ";
             cin >> width;
         }
 
         area = length * width;
-
         cout << "The area is " << area << endl;
     }
     else if (choice == 3)
@@ -280,7 +233,7 @@ void question4()
 
         while (base < 0)
         {
-            cout << "Only enter positive values for base and height. Try again: ";
+            cout << "Enter a positive base: ";
             cin >> base;
         }
 
@@ -289,28 +242,24 @@ void question4()
 
         while (height < 0)
         {
-            cout << "Only enter positive values for base and height. Try again: ";
+            cout << "Enter a positive height: ";
             cin >> height;
         }
 
         area = base * height * 0.5;
-
         cout << "The area is " << area << endl;
     }
-    else if (choice == 4)
+    else
     {
         cout << "Returning to the main menu." << endl;
     }
 }
 
-// QUESTION 5 - Distance Traveled
+// Question 5 - Distance Traveled
 void question5()
 {
     double speed;
     int hours;
-
-    cout << endl;
-    cout << "Distance Traveled Calculator" << endl;
 
     cout << "What is the speed of the vehicle in mph? ";
     cin >> speed;
@@ -326,17 +275,16 @@ void question5()
 
     while (hours < 1)
     {
-        cout << "Time must be at least 1 hour. Enter again: ";
+        cout << "Enter at least 1 hour: ";
         cin >> hours;
     }
 
     cout << endl;
     cout << "Hour     Distance Traveled" << endl;
-    cout << "----------------------------" << endl;
+    cout << "--------------------------" << endl;
 
     for (int count = 1; count <= hours; count++)
     {
-        cout << setw(4) << count
-             << setw(15) << speed * count << endl;
+        cout << count << "        " << speed * count << endl;
     }
 }
